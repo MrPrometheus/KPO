@@ -79,5 +79,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Kpo4310_nvm.Lib\Kpo4310_nvm.Lib.csproj">
+      <Project>{0b017c53-250b-4f7a-beea-6e7c425294da}</Project>
+      <Name>Kpo4310_nvm.Lib</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Kpo4310_nvm.Lib;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -39,6 +40,8 @@ namespace Kpo4310_nmv.Main
             //обработка остальных исключений
             catch (Exception ex)
             {
+                LogUtility.ErrorLog(ex.Message);
+                LogUtility.ErrorLog(ex);
                 MessageBox.Show("Ошибка №2: " + ex.Message);
             }
 
