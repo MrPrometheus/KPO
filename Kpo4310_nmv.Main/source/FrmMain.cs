@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Kpo4310_nmv.Main
+namespace Kpo4310_nvm.Main
 {
     public partial class FrmMain : Form
     {
@@ -19,6 +19,7 @@ namespace Kpo4310_nmv.Main
         public FrmMain()
         {
             InitializeComponent();
+            SStatus.Items[0].Text = AppGlobalSettings.LogPath + " | " + AppGlobalSettings.DataFileName;
         }
 
         private void mnExit_Click(object sender, EventArgs e)
@@ -30,10 +31,15 @@ namespace Kpo4310_nmv.Main
         {
             try
             {
-                MockFootballPlayersListCommand loader = new MockFootballPlayersListCommand();
+                //MockFootballPlayersListCommand loader = new MockFootballPlayersListCommand();
+                IFootballPlayerLoader loader = new LoadFootballPlayerListCommand(AppGlobalSettings.DataFileName);
                 loader.Execute();
-                bsPlayers.DataSource = loader.FootballPlayersList;
-                dgvFootballPlayers.DataSource = bsPlayers;
+               
+                if (loader.Status == LoadStatus.Success)
+                {
+                    bsPlayers.DataSource = loader.FootballPlayers;
+                    dgvFootballPlayers.DataSource = bsPlayers;
+                }
             }
             //обработка исключения "Метод не реализован"
             catch (NotImplementedException ex)

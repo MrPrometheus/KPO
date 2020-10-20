@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Kpo4310_nmv.Main
+namespace Kpo4310_nvm.Main
 {
     static class Program
     {
@@ -14,6 +14,8 @@ namespace Kpo4310_nmv.Main
         [STAThread]
         static void Main()
         {
+            Kpo4310_nvm.Lib.AppGlobalSettings.Initialize();
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new FrmMain());

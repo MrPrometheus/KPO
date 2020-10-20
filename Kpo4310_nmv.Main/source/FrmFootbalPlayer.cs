@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using Kpo4310_nvm.Lib;
 using System.Windows.Forms;
 
-namespace Kpo4310_nmv.Main
+namespace Kpo4310_nvm.Main
 {
     public partial class FrmFootbalPlayer : Form
     {

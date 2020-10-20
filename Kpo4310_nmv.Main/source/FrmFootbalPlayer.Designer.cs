@@ -1,4 +1,4 @@
-﻿namespace Kpo4310_nmv.Main
+﻿namespace Kpo4310_nvm.Main
 {
     partial class FrmFootbalPlayer
     {

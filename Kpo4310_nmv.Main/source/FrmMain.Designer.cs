@@ -1,4 +1,4 @@
-﻿namespace Kpo4310_nmv.Main
+﻿namespace Kpo4310_nvm.Main
 {
     partial class FrmMain
     {
@@ -36,7 +36,10 @@
             this.mnOpenFootbalPlayer = new System.Windows.Forms.ToolStripMenuItem();
             this.SStatus = new System.Windows.Forms.StatusStrip();
             this.dgvFootballPlayers = new System.Windows.Forms.DataGridView();
+            this.tsLableConfig = new System.Windows.Forms.ToolStripStatusLabel();
+            this.tsLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.MMenu.SuspendLayout();
+            this.SStatus.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFootballPlayers)).BeginInit();
             this.SuspendLayout();
             // 
@@ -91,6 +94,9 @@
             // 
             // SStatus
             // 
+            this.SStatus.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsLableConfig,
+            this.tsLabel});
             this.SStatus.Location = new System.Drawing.Point(0, 428);
             this.SStatus.Name = "SStatus";
             this.SStatus.Size = new System.Drawing.Size(800, 22);
@@ -105,6 +111,16 @@
             this.dgvFootballPlayers.Size = new System.Drawing.Size(800, 398);
             this.dgvFootballPlayers.TabIndex = 2;
             // 
+            // tsLableConfig
+            // 
+            this.tsLableConfig.Name = "tsLableConfig";
+            this.tsLableConfig.Size = new System.Drawing.Size(0, 17);
+            // 
+            // tsLabel
+            // 
+            this.tsLabel.Name = "tsLabel";
+            this.tsLabel.Size = new System.Drawing.Size(0, 17);
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -118,6 +134,8 @@
             this.Text = "КПО:4310:Султанов";
             this.MMenu.ResumeLayout(false);
             this.MMenu.PerformLayout();
+            this.SStatus.ResumeLayout(false);
+            this.SStatus.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFootballPlayers)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -134,6 +152,8 @@
         private System.Windows.Forms.DataGridView dgvFootballPlayers;
         private System.Windows.Forms.ToolStripMenuItem mmFootbalPlayer;
         private System.Windows.Forms.ToolStripMenuItem mnOpenFootbalPlayer;
+        private System.Windows.Forms.ToolStripStatusLabel tsLableConfig;
+        private System.Windows.Forms.ToolStripStatusLabel tsLabel;
     }
 }
 
