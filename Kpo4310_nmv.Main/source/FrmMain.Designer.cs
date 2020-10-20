@@ -32,6 +32,8 @@
             this.mmFile = new System.Windows.Forms.ToolStripMenuItem();
             this.mnExit = new System.Windows.Forms.ToolStripMenuItem();
             this.mnOpen = new System.Windows.Forms.ToolStripMenuItem();
+            this.mmFootbalPlayer = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnOpenFootbalPlayer = new System.Windows.Forms.ToolStripMenuItem();
             this.SStatus = new System.Windows.Forms.StatusStrip();
             this.dgvFootballPlayers = new System.Windows.Forms.DataGridView();
             this.MMenu.SuspendLayout();
@@ -41,7 +43,8 @@
             // MMenu
             // 
             this.MMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mmFile});
+            this.mmFile,
+            this.mmFootbalPlayer});
             this.MMenu.Location = new System.Drawing.Point(0, 0);
             this.MMenu.Name = "MMenu";
             this.MMenu.Size = new System.Drawing.Size(800, 24);
@@ -60,16 +63,31 @@
             // mnExit
             // 
             this.mnExit.Name = "mnExit";
-            this.mnExit.Size = new System.Drawing.Size(180, 22);
+            this.mnExit.Size = new System.Drawing.Size(121, 22);
             this.mnExit.Text = "Выход";
             this.mnExit.Click += new System.EventHandler(this.mnExit_Click);
             // 
             // mnOpen
             // 
             this.mnOpen.Name = "mnOpen";
-            this.mnOpen.Size = new System.Drawing.Size(180, 22);
+            this.mnOpen.Size = new System.Drawing.Size(121, 22);
             this.mnOpen.Text = "Открыть";
             this.mnOpen.Click += new System.EventHandler(this.mnOpen_Click);
+            // 
+            // mmFootbalPlayer
+            // 
+            this.mmFootbalPlayer.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnOpenFootbalPlayer});
+            this.mmFootbalPlayer.Name = "mmFootbalPlayer";
+            this.mmFootbalPlayer.Size = new System.Drawing.Size(87, 20);
+            this.mmFootbalPlayer.Text = "Футболисты";
+            // 
+            // mnOpenFootbalPlayer
+            // 
+            this.mnOpenFootbalPlayer.Name = "mnOpenFootbalPlayer";
+            this.mnOpenFootbalPlayer.Size = new System.Drawing.Size(233, 22);
+            this.mnOpenFootbalPlayer.Text = "Открыть данные футболиста";
+            this.mnOpenFootbalPlayer.Click += new System.EventHandler(this.mnOpenFootbalPlayer_Click);
             // 
             // SStatus
             // 
@@ -114,6 +132,8 @@
         private System.Windows.Forms.ToolStripMenuItem mnOpen;
         private System.Windows.Forms.StatusStrip SStatus;
         private System.Windows.Forms.DataGridView dgvFootballPlayers;
+        private System.Windows.Forms.ToolStripMenuItem mmFootbalPlayer;
+        private System.Windows.Forms.ToolStripMenuItem mnOpenFootbalPlayer;
     }
 }
 

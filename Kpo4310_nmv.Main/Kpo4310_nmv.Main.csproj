@@ -46,15 +46,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FrmMain.cs">
+    <Compile Include="source\FrmFootbalPlayer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmMain.Designer.cs">
+    <Compile Include="source\FrmFootbalPlayer.Designer.cs">
+      <DependentUpon>FrmFootbalPlayer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="source\FrmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="source\FrmMain.Designer.cs">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FrmMain.resx">
+    <EmbeddedResource Include="source\FrmFootbalPlayer.resx">
+      <DependentUpon>FrmFootbalPlayer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="source\FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

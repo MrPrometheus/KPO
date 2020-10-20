@@ -9,7 +9,7 @@ namespace Kpo4310_nvm.Lib
     public class MockFootballPlayersListCommand
     {
         private readonly string _dataFileName = "";
-        private List<FootballPlayer> _players = null;
+        private List<FootballPlayer> _players = new List<FootballPlayer>();
         public List<FootballPlayer> FootballPlayersList
         { 
             get { return _players; } 
@@ -21,7 +21,6 @@ namespace Kpo4310_nvm.Lib
 
         public void Execute()
         {
-            throw new Exception("Не смог добавить");
             {
                 FootballPlayer fp = new FootballPlayer()
                 {
