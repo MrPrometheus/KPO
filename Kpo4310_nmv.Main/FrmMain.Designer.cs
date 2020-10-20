@@ -33,7 +33,9 @@
             this.mnExit = new System.Windows.Forms.ToolStripMenuItem();
             this.mnOpen = new System.Windows.Forms.ToolStripMenuItem();
             this.SStatus = new System.Windows.Forms.StatusStrip();
+            this.dgvFootballPlayers = new System.Windows.Forms.DataGridView();
             this.MMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFootballPlayers)).BeginInit();
             this.SuspendLayout();
             // 
             // MMenu
@@ -77,11 +79,20 @@
             this.SStatus.TabIndex = 1;
             this.SStatus.Text = "statusStrip1";
             // 
+            // dgvFootballPlayers
+            // 
+            this.dgvFootballPlayers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvFootballPlayers.Location = new System.Drawing.Point(0, 27);
+            this.dgvFootballPlayers.Name = "dgvFootballPlayers";
+            this.dgvFootballPlayers.Size = new System.Drawing.Size(800, 398);
+            this.dgvFootballPlayers.TabIndex = 2;
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.dgvFootballPlayers);
             this.Controls.Add(this.SStatus);
             this.Controls.Add(this.MMenu);
             this.MainMenuStrip = this.MMenu;
@@ -89,6 +100,7 @@
             this.Text = "КПО:4310:Султанов";
             this.MMenu.ResumeLayout(false);
             this.MMenu.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFootballPlayers)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -101,6 +113,7 @@
         private System.Windows.Forms.ToolStripMenuItem mnExit;
         private System.Windows.Forms.ToolStripMenuItem mnOpen;
         private System.Windows.Forms.StatusStrip SStatus;
+        private System.Windows.Forms.DataGridView dgvFootballPlayers;
     }
 }
 

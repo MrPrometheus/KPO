@@ -43,6 +43,9 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="source\Log\LogUtility.cs" />
+    <Compile Include="source\Sports record\FootballPlayer.cs" />
+    <Compile Include="source\Sports record\MockFootballPlayersListCommand.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

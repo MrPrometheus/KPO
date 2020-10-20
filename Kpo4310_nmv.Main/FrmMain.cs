@@ -27,10 +27,9 @@ namespace Kpo4310_nmv.Main
         {
             try
             {
-                //Вызов исключения "Метод не реализован"
-                //throw new NotImplementedException();
-                //Вызов базового исключения
-                throw new Exception("Неправильные входные параметры");
+                MockFootballPlayersListCommand loader = new MockFootballPlayersListCommand();
+                loader.Execute();
+                dgvFootballPlayers.DataSource = loader.FootballPlayersList;
             }
             //обработка исключения "Метод не реализован"
             catch (NotImplementedException ex)
@@ -40,7 +39,6 @@ namespace Kpo4310_nmv.Main
             //обработка остальных исключений
             catch (Exception ex)
             {
-                LogUtility.ErrorLog(ex.Message);
                 LogUtility.ErrorLog(ex);
                 MessageBox.Show("Ошибка №2: " + ex.Message);
             }
