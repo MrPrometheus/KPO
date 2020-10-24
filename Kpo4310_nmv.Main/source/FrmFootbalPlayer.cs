@@ -27,7 +27,10 @@ namespace Kpo4310_nvm.Main
         public void SetFootballPlayer(FootballPlayer player)
         {
             this._player = player;
-            Console.WriteLine("Данные футболиста " + this._player.Surname + " открыты");
+            LblFootbolsData.Text = "Данные игрока: " + player.Surname;
+            LblComandName.Text = player.CommandCode + " - " + player.Description;
+            LblPosition.Text = "Место: " + player.RankingPlace;
+            LblReiting.Text = "Количество баллов: " + player.NumberOfPoints;
         }
     }
 }
