@@ -35,9 +35,10 @@
             this.mmFootbalPlayer = new System.Windows.Forms.ToolStripMenuItem();
             this.mnOpenFootbalPlayer = new System.Windows.Forms.ToolStripMenuItem();
             this.SStatus = new System.Windows.Forms.StatusStrip();
-            this.dgvFootballPlayers = new System.Windows.Forms.DataGridView();
             this.tsLableConfig = new System.Windows.Forms.ToolStripStatusLabel();
             this.tsLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.dgvFootballPlayers = new System.Windows.Forms.DataGridView();
+            this.mnSave = new System.Windows.Forms.ToolStripMenuItem();
             this.MMenu.SuspendLayout();
             this.SStatus.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFootballPlayers)).BeginInit();
@@ -58,7 +59,8 @@
             // 
             this.mmFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnExit,
-            this.mnOpen});
+            this.mnOpen,
+            this.mnSave});
             this.mmFile.Name = "mmFile";
             this.mmFile.Size = new System.Drawing.Size(48, 20);
             this.mmFile.Text = "Файл";
@@ -66,14 +68,14 @@
             // mnExit
             // 
             this.mnExit.Name = "mnExit";
-            this.mnExit.Size = new System.Drawing.Size(121, 22);
+            this.mnExit.Size = new System.Drawing.Size(180, 22);
             this.mnExit.Text = "Выход";
             this.mnExit.Click += new System.EventHandler(this.mnExit_Click);
             // 
             // mnOpen
             // 
             this.mnOpen.Name = "mnOpen";
-            this.mnOpen.Size = new System.Drawing.Size(121, 22);
+            this.mnOpen.Size = new System.Drawing.Size(180, 22);
             this.mnOpen.Text = "Открыть";
             this.mnOpen.Click += new System.EventHandler(this.mnOpen_Click);
             // 
@@ -103,14 +105,6 @@
             this.SStatus.TabIndex = 1;
             this.SStatus.Text = "statusStrip1";
             // 
-            // dgvFootballPlayers
-            // 
-            this.dgvFootballPlayers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvFootballPlayers.Location = new System.Drawing.Point(0, 27);
-            this.dgvFootballPlayers.Name = "dgvFootballPlayers";
-            this.dgvFootballPlayers.Size = new System.Drawing.Size(800, 398);
-            this.dgvFootballPlayers.TabIndex = 2;
-            // 
             // tsLableConfig
             // 
             this.tsLableConfig.Name = "tsLableConfig";
@@ -120,6 +114,21 @@
             // 
             this.tsLabel.Name = "tsLabel";
             this.tsLabel.Size = new System.Drawing.Size(0, 17);
+            // 
+            // dgvFootballPlayers
+            // 
+            this.dgvFootballPlayers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvFootballPlayers.Location = new System.Drawing.Point(0, 27);
+            this.dgvFootballPlayers.Name = "dgvFootballPlayers";
+            this.dgvFootballPlayers.Size = new System.Drawing.Size(800, 398);
+            this.dgvFootballPlayers.TabIndex = 2;
+            // 
+            // mnSave
+            // 
+            this.mnSave.Name = "mnSave";
+            this.mnSave.Size = new System.Drawing.Size(180, 22);
+            this.mnSave.Text = "Сохранить";
+            this.mnSave.Click += new System.EventHandler(this.mnSave_Click);
             // 
             // FrmMain
             // 
@@ -154,6 +163,7 @@
         private System.Windows.Forms.ToolStripMenuItem mnOpenFootbalPlayer;
         private System.Windows.Forms.ToolStripStatusLabel tsLableConfig;
         private System.Windows.Forms.ToolStripStatusLabel tsLabel;
+        private System.Windows.Forms.ToolStripMenuItem mnSave;
     }
 }
 

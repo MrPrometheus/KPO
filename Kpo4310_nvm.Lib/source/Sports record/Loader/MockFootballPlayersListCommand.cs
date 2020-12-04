@@ -6,14 +6,18 @@ using System.Threading.Tasks;
 
 namespace Kpo4310_nvm.Lib
 {
-    public class MockFootballPlayersListCommand
+    public class MockFootballPlayersListCommand : IFootballPlayerLoader
     {
         private readonly string _dataFileName = "";
+        private LoadStatus _status = LoadStatus.None;
         private List<FootballPlayer> _players = new List<FootballPlayer>();
-        public List<FootballPlayer> FootballPlayersList
+        public List<FootballPlayer> FootballPlayers
         { 
             get { return _players; } 
         }
+
+        public LoadStatus Status => _status;
+
         public MockFootballPlayersListCommand()
         {
 
@@ -30,7 +34,7 @@ namespace Kpo4310_nvm.Lib
                     NumberOfPoints = 123.7,
                     RankingPlace = 2
                 };
-                FootballPlayersList.Add(fp);
+                FootballPlayers.Add(fp);
             }
             {
                 FootballPlayer fp = new FootballPlayer()
@@ -41,7 +45,7 @@ namespace Kpo4310_nvm.Lib
                     NumberOfPoints = 79.98,
                     RankingPlace = 3
                 };
-                FootballPlayersList.Add(fp);
+                FootballPlayers.Add(fp);
             }
             {
                 FootballPlayer fp = new FootballPlayer()
@@ -52,8 +56,9 @@ namespace Kpo4310_nvm.Lib
                     NumberOfPoints = 134.8,
                     RankingPlace = 1
                 };
-                FootballPlayersList.Add(fp);
+                FootballPlayers.Add(fp);
             }
+            _status = LoadStatus.Success;
         }
     }
 }

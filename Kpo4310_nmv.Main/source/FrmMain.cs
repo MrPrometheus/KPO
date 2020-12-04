@@ -32,9 +32,9 @@ namespace Kpo4310_nvm.Main
             try
             {
                 //MockFootballPlayersListCommand loader = new MockFootballPlayersListCommand();
-                IFootballPlayerLoader loader = new LoadFootballPlayerListCommand(AppGlobalSettings.DataFileName);
+                IFootballPlayerLoader loader = AppGlobalSettings.DetailsFactory.CreateFootballPlayersListLoader();
                 loader.Execute();
-               
+                players = loader.FootballPlayers;
                 if (loader.Status == LoadStatus.Success)
                 {
                     bsPlayers.DataSource = loader.FootballPlayers;
@@ -61,6 +61,25 @@ namespace Kpo4310_nvm.Main
             FootballPlayer player = bsPlayers.Current as FootballPlayer;
             frmFp.SetFootballPlayer(player);
             frmFp.ShowDialog();
+        }
+
+        private void mnSave_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if(players == null || players.Count == 0)
+                {
+                    throw new Exception("Нет данных для сохранения");
+                }
+                IFootballPlayerSaver saver = AppGlobalSettings.DetailsFactory.CreateFootballPlayersListSaver();
+                saver.FootballPlayers = players;
+                saver.Execute();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Ошибка: " + ex.Message);
+                LogUtility.ErrorLog("Ошибка: " + ex.Message);
+            }
         }
     }
 }
