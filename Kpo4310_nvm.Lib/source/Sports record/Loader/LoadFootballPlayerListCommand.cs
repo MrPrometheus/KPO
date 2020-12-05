@@ -15,13 +15,9 @@ namespace Kpo4310_nvm.Lib
         public List<FootballPlayer> FootballPlayers { get { return _players; } }
         public LoadStatus Status { get { return _status; } }
 
-        public LoadFootballPlayerListCommand(string path)
+        public void Execute(string path)
         {
-            this._path = path;
-        }
-
-        public void Execute()
-        {
+            _path = path;
             try
             {
                 if (String.IsNullOrEmpty(_path))

@@ -8,7 +8,7 @@ namespace Kpo4310_nvm.Lib
 {
     public class MockFootballPlayersListCommand : IFootballPlayerLoader
     {
-        private readonly string _dataFileName = "";
+        private string _dataFileName = "";
         private LoadStatus _status = LoadStatus.None;
         private List<FootballPlayer> _players = new List<FootballPlayer>();
         public List<FootballPlayer> FootballPlayers
@@ -18,13 +18,9 @@ namespace Kpo4310_nvm.Lib
 
         public LoadStatus Status => _status;
 
-        public MockFootballPlayersListCommand()
+        public void Execute(string path)
         {
-
-        }
-
-        public void Execute()
-        {
+            _dataFileName = path;
             {
                 FootballPlayer fp = new FootballPlayer()
                 {

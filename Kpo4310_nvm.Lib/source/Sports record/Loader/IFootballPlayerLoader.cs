@@ -18,6 +18,6 @@ namespace Kpo4310_nvm.Lib
     {
         List<FootballPlayer> FootballPlayers { get; }
         LoadStatus Status { get; }
-        void Execute();
+        void Execute(string path);
     }
 }

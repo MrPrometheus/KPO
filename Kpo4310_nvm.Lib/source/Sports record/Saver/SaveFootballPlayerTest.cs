@@ -9,7 +9,7 @@ namespace Kpo4310_nvm.Lib
 {
     class SaveFootballPlayerTest : IFootballPlayerSaver
     {
-        private readonly string _dataFileName = "";
+        private string _dataFileName = "";
         private SaveStatus _status = SaveStatus.None;
         private List<FootballPlayer> _players = null;
         public List<FootballPlayer> FootballPlayers
@@ -19,8 +19,9 @@ namespace Kpo4310_nvm.Lib
         }
         public SaveStatus Status { get { return _status; } }
 
-        public void Execute()
+        public void Execute(string path)
         {
+            _dataFileName = path;
             try
             {
                 if (FootballPlayers == null) throw new Exception("Нет данных для сохранения");

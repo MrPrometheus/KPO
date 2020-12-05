@@ -9,13 +9,8 @@ namespace Kpo4310_nvm.Lib
 {
     public class SaveFootballPlayer : IFootballPlayerSaver
     {
-        private readonly string _path;
+        private string _path;
         private List<FootballPlayer> _footballPlayers;
-        public SaveFootballPlayer(string dataFileName)
-        {
-            _path = dataFileName;
-            _footballPlayers = null;
-        }
 
         public List<FootballPlayer> FootballPlayers
         {
@@ -29,9 +24,10 @@ namespace Kpo4310_nvm.Lib
             get => _status;
         }
 
-        public void Execute()
+        public void Execute(string dataFileName)
         {
-            if(String.IsNullOrEmpty(_path))
+            _path = dataFileName;
+            if (String.IsNullOrEmpty(_path))
             {
                 _status = SaveStatus.FileNameIsEmpty;
                 throw new Exception("Название файла пустное");

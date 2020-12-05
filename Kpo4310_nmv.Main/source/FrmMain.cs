@@ -32,8 +32,9 @@ namespace Kpo4310_nvm.Main
             try
             {
                 //MockFootballPlayersListCommand loader = new MockFootballPlayersListCommand();
-                IFootballPlayerLoader loader = AppGlobalSettings.DetailsFactory.CreateFootballPlayersListLoader();
-                loader.Execute();
+                //IFootballPlayerLoader loader = AppGlobalSettings.DetailsFactory.CreateFootballPlayersListLoader();
+                IFootballPlayerLoader loader = IoC.container.Resolve<IFootballPlayerLoader>();
+                loader.Execute(AppGlobalSettings.DataFileName);
                 players = loader.FootballPlayers;
                 if (loader.Status == LoadStatus.Success)
                 {
@@ -71,9 +72,9 @@ namespace Kpo4310_nvm.Main
                 {
                     throw new Exception("Нет данных для сохранения");
                 }
-                IFootballPlayerSaver saver = AppGlobalSettings.DetailsFactory.CreateFootballPlayersListSaver();
+                IFootballPlayerSaver saver = IoC.container.Resolve<IFootballPlayerSaver>();
                 saver.FootballPlayers = players;
-                saver.Execute();
+                saver.Execute(AppGlobalSettings.DataFileNameSave);
             }
             catch(Exception ex)
             {
