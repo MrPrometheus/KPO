@@ -30,7 +30,7 @@ namespace Kpo4310_nvm.Lib
                     NumberOfPoints = 123.7,
                     RankingPlace = 2
                 };
-                FootballPlayers.Add(fp);
+                _players.Add(fp);
             }
             {
                 FootballPlayer fp = new FootballPlayer()
@@ -41,7 +41,7 @@ namespace Kpo4310_nvm.Lib
                     NumberOfPoints = 79.98,
                     RankingPlace = 3
                 };
-                FootballPlayers.Add(fp);
+                _players.Add(fp);
             }
             {
                 FootballPlayer fp = new FootballPlayer()
@@ -52,7 +52,7 @@ namespace Kpo4310_nvm.Lib
                     NumberOfPoints = 134.8,
                     RankingPlace = 1
                 };
-                FootballPlayers.Add(fp);
+                _players.Add(fp);
             }
             _status = LoadStatus.Success;
         }

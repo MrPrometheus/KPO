@@ -59,6 +59,7 @@
     <Compile Include="source\Sports record\Loader\IFootballPlayerLoader.cs" />
     <Compile Include="source\Sports record\Loader\LoadFootballPlayerListCommand.cs" />
     <Compile Include="source\Sports record\Loader\MockFootballPlayersListCommand.cs" />
+    <Compile Include="source\Sports record\MoneyGiver.cs" />
     <Compile Include="source\Sports record\Saver\IFoorballPlayerSaver.cs" />
     <Compile Include="source\Sports record\Saver\SaveFootballPlayer.cs" />
     <Compile Include="source\Sports record\Saver\SaveFootballPlayerTest.cs" />

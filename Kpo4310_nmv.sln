@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kpo4310_nvm.Main", "Kpo4310
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kpo4310_nvm.Lib", "Kpo4310_nvm.Lib\Kpo4310_nvm.Lib.csproj", "{0B017C53-250B-4F7A-BEEA-6E7C425294DA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject", "UnitTestProject\UnitTestProject.csproj", "{8F6C5EE4-8DF6-48BD-BCE9-580BCC84476B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{0B017C53-250B-4F7A-BEEA-6E7C425294DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0B017C53-250B-4F7A-BEEA-6E7C425294DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0B017C53-250B-4F7A-BEEA-6E7C425294DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F6C5EE4-8DF6-48BD-BCE9-580BCC84476B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F6C5EE4-8DF6-48BD-BCE9-580BCC84476B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F6C5EE4-8DF6-48BD-BCE9-580BCC84476B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F6C5EE4-8DF6-48BD-BCE9-580BCC84476B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

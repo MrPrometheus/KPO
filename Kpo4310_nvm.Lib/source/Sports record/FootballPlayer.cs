@@ -21,5 +21,7 @@ namespace Kpo4310_nvm.Lib
         public string Description { get; set; }
         public double NumberOfPoints { get; set; }
         public int RankingPlace { get; set; }
+
+        public double Money { get; set; }
     }
 }
