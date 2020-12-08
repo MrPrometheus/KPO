@@ -9,11 +9,22 @@ namespace Kpo4310_nvm.Lib
 {
     public class LoadFootballPlayerListCommand : IFootballPlayerLoader
     {
+        private OnLoadFileDelegate onAfterRowConvert = null;
+
         private List<FootballPlayer> _players = null;
         private string _path;
         private LoadStatus _status = LoadStatus.None;
         public List<FootballPlayer> FootballPlayers { get { return _players; } }
         public LoadStatus Status { get { return _status; } }
+
+        public void SetAfterRowConvert(OnLoadFileDelegate onAfterRowConvert)
+        {
+            this.onAfterRowConvert = onAfterRowConvert;
+        }
+        public OnLoadFileDelegate AfterRowConvert
+        {
+            get => onAfterRowConvert;
+        }
 
         /*
          Метод должен загрузить данные, хранящиеся в файле, в программу в определенном формате
@@ -59,6 +70,7 @@ namespace Kpo4310_nvm.Lib
                             RankingPlace = Int32.Parse(arr[4])
                         };
                         _players.Add(p);
+                        onAfterRowConvert?.Invoke(p);
                     }
                 }
             }

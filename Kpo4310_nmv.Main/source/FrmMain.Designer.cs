@@ -32,13 +32,14 @@
             this.mmFile = new System.Windows.Forms.ToolStripMenuItem();
             this.mnExit = new System.Windows.Forms.ToolStripMenuItem();
             this.mnOpen = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnSave = new System.Windows.Forms.ToolStripMenuItem();
             this.mmFootbalPlayer = new System.Windows.Forms.ToolStripMenuItem();
             this.mnOpenFootbalPlayer = new System.Windows.Forms.ToolStripMenuItem();
             this.SStatus = new System.Windows.Forms.StatusStrip();
             this.tsLableConfig = new System.Windows.Forms.ToolStripStatusLabel();
             this.tsLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.dgvFootballPlayers = new System.Windows.Forms.DataGridView();
-            this.mnSave = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsLblStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.MMenu.SuspendLayout();
             this.SStatus.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFootballPlayers)).BeginInit();
@@ -68,16 +69,23 @@
             // mnExit
             // 
             this.mnExit.Name = "mnExit";
-            this.mnExit.Size = new System.Drawing.Size(180, 22);
+            this.mnExit.Size = new System.Drawing.Size(133, 22);
             this.mnExit.Text = "Выход";
             this.mnExit.Click += new System.EventHandler(this.mnExit_Click);
             // 
             // mnOpen
             // 
             this.mnOpen.Name = "mnOpen";
-            this.mnOpen.Size = new System.Drawing.Size(180, 22);
+            this.mnOpen.Size = new System.Drawing.Size(133, 22);
             this.mnOpen.Text = "Открыть";
             this.mnOpen.Click += new System.EventHandler(this.mnOpen_Click);
+            // 
+            // mnSave
+            // 
+            this.mnSave.Name = "mnSave";
+            this.mnSave.Size = new System.Drawing.Size(133, 22);
+            this.mnSave.Text = "Сохранить";
+            this.mnSave.Click += new System.EventHandler(this.mnSave_Click);
             // 
             // mmFootbalPlayer
             // 
@@ -98,7 +106,8 @@
             // 
             this.SStatus.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsLableConfig,
-            this.tsLabel});
+            this.tsLabel,
+            this.tsLblStatus});
             this.SStatus.Location = new System.Drawing.Point(0, 428);
             this.SStatus.Name = "SStatus";
             this.SStatus.Size = new System.Drawing.Size(800, 22);
@@ -123,12 +132,11 @@
             this.dgvFootballPlayers.Size = new System.Drawing.Size(800, 398);
             this.dgvFootballPlayers.TabIndex = 2;
             // 
-            // mnSave
+            // tsLblStatus
             // 
-            this.mnSave.Name = "mnSave";
-            this.mnSave.Size = new System.Drawing.Size(180, 22);
-            this.mnSave.Text = "Сохранить";
-            this.mnSave.Click += new System.EventHandler(this.mnSave_Click);
+            this.tsLblStatus.Name = "tsLblStatus";
+            this.tsLblStatus.Size = new System.Drawing.Size(64, 17);
+            this.tsLblStatus.Text = "tsLblStatus";
             // 
             // FrmMain
             // 
@@ -164,6 +172,7 @@
         private System.Windows.Forms.ToolStripStatusLabel tsLableConfig;
         private System.Windows.Forms.ToolStripStatusLabel tsLabel;
         private System.Windows.Forms.ToolStripMenuItem mnSave;
+        private System.Windows.Forms.ToolStripStatusLabel tsLblStatus;
     }
 }
 

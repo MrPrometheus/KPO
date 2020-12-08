@@ -15,6 +15,7 @@ namespace Kpo4310_nvm.Main
     {
 
         private List<FootballPlayer> players = null;
+        private int count = 0;
         private BindingSource bsPlayers = new BindingSource();
         public FrmMain()
         {
@@ -27,14 +28,20 @@ namespace Kpo4310_nvm.Main
             Close();
         }
 
+        private void OnAfterRowConvert(FootballPlayer currentRow)
+        {
+            tsLblStatus.Text = $"Текущий: {currentRow.Surname} | Всего обработано {++count}";
+        }
+
         private void mnOpen_Click(object sender, EventArgs e)
         {
             try
             {
-                throw new IncorrectFileInput("Файл пуст");
+                //throw new IncorrectFileInput("Файл пуст");
                 //MockFootballPlayersListCommand loader = new MockFootballPlayersListCommand();
                 //IFootballPlayerLoader loader = AppGlobalSettings.DetailsFactory.CreateFootballPlayersListLoader();
                 IFootballPlayerLoader loader = IoC.container.Resolve<IFootballPlayerLoader>();
+                loader.SetAfterRowConvert(this.OnAfterRowConvert);
                 loader.Execute(AppGlobalSettings.DataFileName);
                 players = loader.FootballPlayers;
                 if (loader.Status == LoadStatus.Success)

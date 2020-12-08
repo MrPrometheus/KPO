@@ -19,5 +19,9 @@ namespace Kpo4310_nvm.Lib
         List<FootballPlayer> FootballPlayers { get; }
         LoadStatus Status { get; }
         void Execute(string path);
+
+        void SetAfterRowConvert(OnLoadFileDelegate onAfterRowConvert);
     }
+
+    public delegate void OnLoadFileDelegate(FootballPlayer currentRow);
 }
