@@ -15,16 +15,21 @@ namespace Kpo4310_nvm.Lib
         public List<FootballPlayer> FootballPlayers { get { return _players; } }
         public LoadStatus Status { get { return _status; } }
 
+        /*
+         Метод должен загрузить данные, хранящиеся в файле, в программу в определенном формате
+         */
         public void Execute(string path)
         {
             _path = path;
             try
             {
+                //Сделать проверку на пустоту пути, если нет, выдать ошибку
                 if (String.IsNullOrEmpty(_path))
                 {
                     _status = LoadStatus.FileNameIsEmpty;
                     throw new Exception("Имя файла не указано");
                 }
+                //Сделать проверку на существование файла по указанному пути, если нет, выдать ошибку
                 if (!File.Exists(_path))
                 {
                     _status = LoadStatus.FileNotExists;
@@ -33,14 +38,18 @@ namespace Kpo4310_nvm.Lib
 
                 _players = new List<FootballPlayer>();
 
+                //Если путь корректен, то считать из него построчно информацию
                 using (var sr = new StreamReader(_path))
                 {
                     string line;
+                //Каждая интерация - новая строка, которая должна соответсвовать шаблону
                     while ((line = sr.ReadLine()) != null)
                     {
+                //В каждой строке символ '|' - является разделителем между информационными полями
                         string[] arr = line.Split('|');
                         double num;
                         int num1;
+                //Все поля должны соответсвовать модели Игрока футбльной команды
                         FootballPlayer p = new FootballPlayer()
                         {
                             Surname = arr[0],
@@ -53,6 +62,7 @@ namespace Kpo4310_nvm.Lib
                     }
                 }
             }
+                //Если все поля верны и можно сформировать модель, то установить статус загрузки в успешно, иначе в ошибку и вызвать исключение
             catch(Exception ex)
             {
                 LogUtility.ErrorLog(ex);
