@@ -31,6 +31,7 @@ namespace Kpo4310_nvm.Main
         {
             try
             {
+                throw new IncorrectFileInput("Файл пуст");
                 //MockFootballPlayersListCommand loader = new MockFootballPlayersListCommand();
                 //IFootballPlayerLoader loader = AppGlobalSettings.DetailsFactory.CreateFootballPlayersListLoader();
                 IFootballPlayerLoader loader = IoC.container.Resolve<IFootballPlayerLoader>();
@@ -43,14 +44,15 @@ namespace Kpo4310_nvm.Main
                 }
             }
             //обработка исключения "Метод не реализован"
-            catch (NotImplementedException ex)
+            catch (IncorrectFileInput ex)
             {
+                LogCustomExeption.ErrorLog(ex);
                 MessageBox.Show("Ошибка №1: " + ex.Message);
             }
             //обработка остальных исключений
             catch (Exception ex)
             {
-                LogUtility.ErrorLog(ex);
+                LogCustomExeption.ErrorLog(ex);
                 MessageBox.Show("Ошибка №2: " + ex.Message);
             }
 
@@ -76,10 +78,16 @@ namespace Kpo4310_nvm.Main
                 saver.FootballPlayers = players;
                 saver.Execute(AppGlobalSettings.DataFileNameSave);
             }
-            catch(Exception ex)
+            catch (IncorrectFileInput ex)
             {
-                MessageBox.Show("Ошибка: " + ex.Message);
-                LogUtility.ErrorLog("Ошибка: " + ex.Message);
+                LogCustomExeption.ErrorLog(ex);
+                MessageBox.Show("Ошибка №1: " + ex.Message);
+            }
+            //обработка остальных исключений
+            catch (Exception ex)
+            {
+                LogCustomExeption.ErrorLog(ex);
+                MessageBox.Show("Ошибка №2: " + ex.Message);
             }
         }
     }
