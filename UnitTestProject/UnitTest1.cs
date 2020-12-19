@@ -87,5 +87,49 @@ namespace UnitTestProject
             MoneyGiver.SorterArray(arr);
             Assert.IsTrue(arr.SequenceEqual(new[] { 1, 2, 3 }));
         }
+
+        [TestMethod]
+        public void SortedTestCircle1()
+        {
+            var arr = new[] { 124, 412, 12, 52, -12 };
+            SortedAlg.CircleSort(arr);
+            Console.WriteLine(arr);
+            Assert.IsTrue(arr.SequenceEqual(new[] { -12, 12, 52, 124, 412 }));
+        }
+
+        [TestMethod]
+        public void SortedTesCirclet2()
+        {
+            var loader = new LoadFootballPlayerListCommand();
+            loader.Execute("G:\\KPO\\Kpo4310_nmv.Main\\bin\\Debug\\FootballPlayer.txt");
+
+            var arr = new[] {loader.FootballPlayers[0].RankingPlace,
+                             loader.FootballPlayers[1].RankingPlace,
+                             loader.FootballPlayers[2].RankingPlace};
+            SortedAlg.CircleSort(arr);
+            Assert.IsTrue(arr.SequenceEqual(new[] { 1, 2, 3 }));
+        }
+
+        [TestMethod]
+        public void SortedTestGnome1()
+        {
+            var arr = new[] { 124, 412, 12, 52, -12 };
+            SortedAlg.CircleSort(arr);
+            Console.WriteLine(arr);
+            Assert.IsTrue(arr.SequenceEqual(new[] { -12, 12, 52, 124, 412 }));
+        }
+
+        [TestMethod]
+        public void SortedTesGnome2()
+        {
+            var loader = new LoadFootballPlayerListCommand();
+            loader.Execute("G:\\KPO\\Kpo4310_nmv.Main\\bin\\Debug\\FootballPlayer.txt");
+
+            var arr = new[] {loader.FootballPlayers[0].RankingPlace,
+                             loader.FootballPlayers[1].RankingPlace,
+                             loader.FootballPlayers[2].RankingPlace};
+            SortedAlg.CircleSort(arr);
+            Assert.IsTrue(arr.SequenceEqual(new[] { 1, 2, 3 }));
+        }
     }
 }

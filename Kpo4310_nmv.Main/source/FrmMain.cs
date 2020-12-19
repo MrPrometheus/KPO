@@ -33,7 +33,7 @@ namespace Kpo4310_nvm.Main
             tsLblStatus.Text = $"Текущий: {currentRow.Surname} | Всего обработано {++count}";
         }
 
-        private void mnOpen_Click(object sender, EventArgs e)
+        private async void mnOpen_Click(object sender, EventArgs e)
         {
             try
             {
@@ -42,7 +42,7 @@ namespace Kpo4310_nvm.Main
                 //IFootballPlayerLoader loader = AppGlobalSettings.DetailsFactory.CreateFootballPlayersListLoader();
                 IFootballPlayerLoader loader = IoC.container.Resolve<IFootballPlayerLoader>();
                 loader.SetAfterRowConvert(this.OnAfterRowConvert);
-                loader.Execute(AppGlobalSettings.DataFileName);
+                await Task.Run(() => loader.Execute(AppGlobalSettings.DataFileName));
                 players = loader.FootballPlayers;
                 if (loader.Status == LoadStatus.Success)
                 {
@@ -75,6 +75,9 @@ namespace Kpo4310_nvm.Main
 
         private void mnSave_Click(object sender, EventArgs e)
         {
+            var t = new[] { -2, 1, -5, 5 };
+            SortedAlg.CircleSort(t);
+            Console.WriteLine(t);
             try
             {
                 if(players == null || players.Count == 0)

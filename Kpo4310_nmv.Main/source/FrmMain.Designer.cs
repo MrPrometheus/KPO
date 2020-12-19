@@ -38,8 +38,8 @@
             this.SStatus = new System.Windows.Forms.StatusStrip();
             this.tsLableConfig = new System.Windows.Forms.ToolStripStatusLabel();
             this.tsLabel = new System.Windows.Forms.ToolStripStatusLabel();
-            this.dgvFootballPlayers = new System.Windows.Forms.DataGridView();
             this.tsLblStatus = new System.Windows.Forms.ToolStripStatusLabel();
+            this.dgvFootballPlayers = new System.Windows.Forms.DataGridView();
             this.MMenu.SuspendLayout();
             this.SStatus.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFootballPlayers)).BeginInit();
@@ -69,21 +69,21 @@
             // mnExit
             // 
             this.mnExit.Name = "mnExit";
-            this.mnExit.Size = new System.Drawing.Size(133, 22);
+            this.mnExit.Size = new System.Drawing.Size(180, 22);
             this.mnExit.Text = "Выход";
             this.mnExit.Click += new System.EventHandler(this.mnExit_Click);
             // 
             // mnOpen
             // 
             this.mnOpen.Name = "mnOpen";
-            this.mnOpen.Size = new System.Drawing.Size(133, 22);
+            this.mnOpen.Size = new System.Drawing.Size(180, 22);
             this.mnOpen.Text = "Открыть";
             this.mnOpen.Click += new System.EventHandler(this.mnOpen_Click);
             // 
             // mnSave
             // 
             this.mnSave.Name = "mnSave";
-            this.mnSave.Size = new System.Drawing.Size(133, 22);
+            this.mnSave.Size = new System.Drawing.Size(180, 22);
             this.mnSave.Text = "Сохранить";
             this.mnSave.Click += new System.EventHandler(this.mnSave_Click);
             // 
@@ -124,6 +124,12 @@
             this.tsLabel.Name = "tsLabel";
             this.tsLabel.Size = new System.Drawing.Size(0, 17);
             // 
+            // tsLblStatus
+            // 
+            this.tsLblStatus.Name = "tsLblStatus";
+            this.tsLblStatus.Size = new System.Drawing.Size(64, 17);
+            this.tsLblStatus.Text = "tsLblStatus";
+            // 
             // dgvFootballPlayers
             // 
             this.dgvFootballPlayers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -131,12 +137,6 @@
             this.dgvFootballPlayers.Name = "dgvFootballPlayers";
             this.dgvFootballPlayers.Size = new System.Drawing.Size(800, 398);
             this.dgvFootballPlayers.TabIndex = 2;
-            // 
-            // tsLblStatus
-            // 
-            this.tsLblStatus.Name = "tsLblStatus";
-            this.tsLblStatus.Size = new System.Drawing.Size(64, 17);
-            this.tsLblStatus.Text = "tsLblStatus";
             // 
             // FrmMain
             // 

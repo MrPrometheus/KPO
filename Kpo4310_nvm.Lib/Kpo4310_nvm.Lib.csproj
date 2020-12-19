@@ -56,6 +56,7 @@
     <Compile Include="source\Exeptions\IncorrectFileInput.cs" />
     <Compile Include="source\Log\LogCustomExeption.cs" />
     <Compile Include="source\Log\LogUtility.cs" />
+    <Compile Include="source\SortedAlg.cs" />
     <Compile Include="source\Sports record\FootballPlayer.cs" />
     <Compile Include="source\Sports record\IoC\IoC.cs" />
     <Compile Include="source\Sports record\Loader\IFootballPlayerLoader.cs" />
